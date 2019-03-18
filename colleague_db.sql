@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2019 at 05:14 AM
+-- Generation Time: Mar 18, 2019 at 09:13 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -39,7 +39,9 @@ CREATE TABLE `class_pin` (
 --
 
 INSERT INTO `class_pin` (`pin`, `team_size`, `create_date`) VALUES
-('1150', 4, '2019-03-17 14:11:01');
+('1150', 4, '2019-03-17 14:11:01'),
+('6342', 5, '2019-03-18 08:03:45'),
+('6538', 4, '2019-03-18 08:02:44');
 
 -- --------------------------------------------------------
 
@@ -50,6 +52,7 @@ INSERT INTO `class_pin` (`pin`, `team_size`, `create_date`) VALUES
 CREATE TABLE `client` (
   `pin` varchar(5) NOT NULL,
   `client_name` varchar(255) NOT NULL,
+  `type` int(11) NOT NULL,
   `join_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -57,11 +60,16 @@ CREATE TABLE `client` (
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`pin`, `client_name`, `join_date`) VALUES
-('1150', '590610123', '2019-03-17 15:04:57'),
-('1150', '590610545', '2019-03-17 15:50:56'),
-('1150', '590610655', '2019-03-17 15:19:34'),
-('1150', '590610656', '2019-03-17 15:00:58');
+INSERT INTO `client` (`pin`, `client_name`, `type`, `join_date`) VALUES
+('6342', '590610111', 3, '2019-03-18 08:04:39'),
+('1150', '590610123', 1, '2019-03-17 15:04:57'),
+('1150', '590610352', 2, '2019-03-18 04:32:38'),
+('1150', '590610456', 3, '2019-03-18 04:25:12'),
+('1150', '590610485', 4, '2019-03-18 04:32:18'),
+('1150', '590610545', 1, '2019-03-17 15:50:56'),
+('1150', '590610654', 2, '2019-03-18 04:20:40'),
+('1150', '590610655', 3, '2019-03-17 15:19:34'),
+('1150', '590610656', 4, '2019-03-17 15:00:58');
 
 --
 -- Indexes for dumped tables
