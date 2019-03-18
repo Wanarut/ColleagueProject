@@ -2,34 +2,46 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title> Enter PIN </title>
+    <title> Create Room </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   </head>
 
   <body class="login">
     <div class="container container-login">
-      <form action="client.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
+      <form action="host.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
         <div class="form-group has-feedback">
           <center>
-            <label class="col-sm-6">PIN</label>
+            <label class="col-sm-6">Create Room</label>
 
             <div class="col-sm-6">
-              <input name="pin" type="text" class="form-control" placeholder="Enter PIN" 
-                    required=true pattern="[0-9]{4}">
+              <input name="room_name" type="text" class="form-control" placeholder="Enter Name" 
+                    required=true>
               <div class="valid-feedback">
                 Looks good!
               </div>
               <div class="invalid-feedback">
-                Please enter valid PIN.
+                Please enter valid room name.
               </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="Select01">Member per Team</label>
+                    <select name="team_size" class="custom-select" id="Select01">
+                        <?php
+                            for ($i = 1; $i <= 20; $i++) {
+                                echo "<option value=\"$i\">$i</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
             </div>
 
             <br>
 
             <div class="col-sm-6">
-              <button type="submit" class="btn btn-success"> Submit </button>
-              <button type="button" class="btn btn-primary" onclick="window.location.href='host.php'"> Create Room </button>
+              <button type="submit" class="btn btn-success"> Go </button>
               <button type="reset" class="btn btn-danger"> Reset </button>
             </div>
           </center>
@@ -41,23 +53,9 @@
 
 <?php
   if($_SERVER["REQUEST_METHOD"] == "POST"){
-    require_once 'config.php';
-    $pin = $_POST['pin'];
-
-    $sql = "SELECT pin FROM class_pin WHERE pin=:pin";
-    $stmt = $pdo->prepare($sql);
-    $stmt -> bindParam(':pin', $pin, PDO::PARAM_STR);
-    $stmt -> execute();
-
-    if($stmt->rowCount() == 1){
-      session_start();
-      $_SESSION['pin'] = $pin;
-      header('Location:insert_name.php');
-    }else{
-      echo '<script language="javascript">';
-      echo 'alert("PIN Invalid.")';
-      echo '</script>';
-    }
+    session_start();
+    $_SESSION['team_size'] = $_POST['team_size'];
+    header('Location:gen_pin.php');
   }
 ?>
 
