@@ -39,33 +39,34 @@
 </html>
 
 <?php
-  if($_SERVER["REQUEST_METHOD"] == "POST"){
-    session_start();
-    $pin = $_SESSION['pin'];
-    $client_name = $_POST['client_name'];
-    if(isset($pin)){
-      try{
-        require_once 'config.php';
-        $sql = "INSERT INTO client (pin,client_name) VALUES (:pin,:client_name)";
-        $stmt = $pdo->prepare($sql);
-        // Bind parameters to statement
-        $stmt->bindParam(':pin', $pin, PDO::PARAM_STR);
-        $stmt->bindParam(':client_name', $client_name, PDO::PARAM_STR);
-        $stmt->execute();
+  session_start();
+  $pin = $_SESSION['pin'];
+  if(!isset($pin)){
+    header('Location:client.php');
+  }
 
-        session_unset();
-        session_destroy();
-        header('Location:personality_test.php');
-        echo '<script language="javascript">';
-        echo 'alert("Join room successfully.")';
-        echo '</script>';
-      } catch(PDOException $e){
-        echo '<script language="javascript">';
-        echo 'alert("This name already used.")';
-        echo '</script>';
-      }
-    }else{
-      header('Location:client.php');
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $client_name = $_POST['client_name'];
+    try{
+      require_once 'config.php';
+      $sql = "INSERT INTO client (pin,client_name) VALUES (:pin,:client_name)";
+      $stmt = $pdo->prepare($sql);
+      // Bind parameters to statement
+      $stmt->bindParam(':pin', $pin, PDO::PARAM_STR);
+      $stmt->bindParam(':client_name', $client_name, PDO::PARAM_STR);
+      $stmt->execute();
+
+      $_SESSION['pin'] = NULL;
+      $_SESSION['client_name'] = $client_name;
+      header('Location:personality_test.php');
+
+      // echo '<script language="javascript">';
+      // echo 'alert("Join room successfully.")';
+      // echo '</script>';
+    } catch(PDOException $e){
+      echo '<script language="javascript">';
+      echo 'alert("This name already used.")';
+      echo '</script>';
     }
   }
 ?>

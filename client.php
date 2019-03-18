@@ -43,7 +43,7 @@
     require_once 'config.php';
     $pin = $_POST['pin'];
 
-    $sql = "SELECT * FROM class_pin WHERE pin=:pin";
+    $sql = "SELECT pin FROM class_pin WHERE pin=:pin";
     $stmt = $pdo->prepare($sql);
     $stmt -> bindParam(':pin', $pin, PDO::PARAM_STR);
     $stmt -> execute();
