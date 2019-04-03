@@ -62,11 +62,18 @@
   }
    /* ----------- pin input------------- */
    pin {
-    font-weight: normal;
+    font-weight: bold;
     text-align: center;
-    font-size: 24px;
+    font-size: 36px;
     text-transform: uppercase;
     color: 	black;
+  }
+  id{
+    font-weight: bold;
+    text-align: center;
+    font-size: 38px;
+    text-transform: uppercase;
+    color:  black;
   }
   selectf {
     font-weight: normal;

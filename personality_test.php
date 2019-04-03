@@ -13,7 +13,7 @@
 
   <body>
     <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
-    <center><test>TEST</test></center>
+    <center><test>Waiting...</test></center>
       <!-- <form action="personality_test.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
         <div class="row">
           <div class="col-sm-5"></div>

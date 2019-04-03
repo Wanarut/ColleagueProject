@@ -1,9 +1,7 @@
 <?php
   require_once 'config.php';
-  session_start();
-  $team_size = $_SESSION['team_size'];
+   session_start();
   $pin = $_SESSION['pin'];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,13 +21,40 @@
       <form action="gen_pin.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
           <br><br>
           <center>
-            <center><pin> enter pin : <?php echo $pin ?></pin></center>
+            <pin> pin : <?php echo $pin?></pin>
             <div class="col-sm-6">
               <button type="submit" class="btn join"> Start Grouping </button>
             </div>
-          
             <br>
+            <!-- <id> 590610674 <id> -->
+            <div id="refresh"></div>
+            <div id="all_client">
+              <?php
+              $myfile = fopen("pin.txt", "r") or die("Unable to open file!");
+              $pin_store = fgets($myfile);
+              fclose($myfile);
+              $pin_store_array = explode(",", $pin_store);      
+              $id_client = "SELECT * FROM client WHERE pin='$pin_store_array[0]'";
+              $result =  $pdo->query($id_client);
+
+              if($result->rowCount() > 0) {
+                $count_roll = 0;
+                while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                  //echo $row["client_name"];
+                  echo "<id>".$row["client_name"]."<id><br>";
+                }
+              } else {
+                  //echo "0 results";
+              }
+            ?>
+            </div>
           </center>
       </form>
   </body>
 </html>
+<script type="text/javascript">
+    setInterval("my_function();",500); 
+    function my_function(){ 
+      $('#refresh').load(' #all_client');
+    }
+</script>

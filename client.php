@@ -62,6 +62,9 @@
 ?>
 
 <script>
+  // window.onhashchange = function() {
+  //   window.location.reload('insert_name.php');
+  // }
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
   'use strict';
