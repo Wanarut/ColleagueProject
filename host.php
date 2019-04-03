@@ -30,7 +30,7 @@
                     <label class="input-group-text" for="Select01">Member per Team</label>
                     <select name="team_size" class="custom-select" id="Select01">
                         <?php
-                            for ($i = 1; $i <= 20; $i++) {
+                            for ($i = 3; $i <= 20; $i++) {
                                 echo "<option value=\"$i\">$i</option>";
                             }
                         ?>

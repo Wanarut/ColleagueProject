@@ -16,7 +16,11 @@
 
             <div class="col-sm-6">
               <button type="submit" class="btn btn-success"> Submit </button>
-              <button type="reset" class="btn btn-danger"> Reset </button>
+              <?php
+                if($_SERVER["REQUEST_METHOD"] == "POST"){
+                  echo "<a class='btn btn-large btn-info' href='my_group.php'>See My Group</a>";
+                }
+              ?>
             </div>
           </center>
         </div>
@@ -34,6 +38,11 @@
   require_once 'config.php';
   session_start();
   $client_name = $_SESSION['client_name'];
+
+  if(!isset($client_name)){
+    header('Location:client.php');
+  }
+
   $team_size = 1;
 
   $sql = "SELECT team_size FROM class_pin WHERE pin=(SELECT pin FROM client WHERE client_name=:client_name)";
@@ -54,7 +63,9 @@
     $stmt -> bindParam(':client_name', $client_name, PDO::PARAM_STR);
     $stmt -> execute();
 
-    echo 'Your personal type is '.$type;
+    echo 'Your personal type is ' . $type;
+
+    $_SESSION['client_name'] = $client_name;
   }
 ?>
 

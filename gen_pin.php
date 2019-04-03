@@ -1,16 +1,18 @@
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-        header('Location:client.php');
+        header('Location:grouping.php');
     }
 
     session_start();
     $team_size = $_SESSION['team_size'];
+    $pin = $_SESSION['pin'];
+
     if(!isset($team_size)){
         header('Location:client.php');
     }
 
     require_once 'config.php';
-    while(true){
+    while(!isset($pin)){
         $pin = rand(1000,9999);
         try{
             $sql = "INSERT INTO class_pin (pin,team_size) VALUES (:pin,:team_size)";
