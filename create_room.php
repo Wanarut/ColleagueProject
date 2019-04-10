@@ -13,7 +13,7 @@
 
   <body>
     <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
-    <form action="host.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
+    <form action="create_room.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
     <div class="row">
       <div class="col-sm-4"></div>
       <div class="col-sm-4">

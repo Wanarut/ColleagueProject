@@ -3,8 +3,9 @@
     // $pin = $_SESSION['pin'];
     // $team_size = $_SESSION['team_size'];
 
-    $pin = "1150";
-    $team_size = 4;
+    //$pin = "1150";
+    $pin = $_GET["room"];
+    $team_size = $_GET["team_size"];
     $alpha = 0.5;
 
     require_once 'config.php';

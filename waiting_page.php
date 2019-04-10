@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title> waiting room </title>
+    <title> waiting page </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,28 +12,37 @@
   </head>
 
   <body>
-    <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
-    <center><test>Waiting...</test>
-    </center>   
+    <form action="my_group.php?client=<?php echo $_GET["client"]?>&room=<?php echo $_GET["room"]?>" method="POST" name="waiting_page" id="waiting_page" class="needs-validation">
+      <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
+      <center><test>Waiting...</test>
+        <br><br>
+        <div id="refresh"></div>
+              <div id="all_client">
+                <?php 
+                require_once 'config.php';
 
-    <!-- <form action="personality_test.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
-        <div class="row">
-          <div class="col-sm-5"></div>
-          <div class="col-sm-2">
-          <div class="form-group">
-            <center><pin> enter your code </pin></center>
-            <input name="client_name" type="pin" class="form-control" placeholder="Enter Code" required=true pattern="[0-9]{9}">
-            <div class="valid-feedback">
-              <font color="white">Let's Go!!</font>
-            </div>
-            <div class="invalid-feedback">
-              <font color="white">Please enter valid PIN.</font>
-            </div>
-          </div>  
-          </div>
-          <div class="col-sm-5"></div>
+                $id_client = "SELECT team_no FROM client WHERE client_name=$_GET[client]";
+                $result =  $pdo->query($id_client);
+
+                if($result->rowCount() > 0) {
+                  while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    if($row["team_no"]!="0"){
+                      echo "<button name='submit1' type='submit' class='btn join'> Go to your group </button>";       
+                    }else{
+                    }                
+                  }
+                } else {
+                    //echo "0 results";
+                }
+              ?>
         </div>
-        <center><button type="submit" class="btn start" > Start Grouping </button></center>
-    </from> -->
+      </center> 
+    </form>  
   </body>
 </html>
+<script type="text/javascript">
+    setInterval("my_function();",500); 
+    function my_function(){ 
+      $('#refresh').load(' #all_client');
+    }
+</script>

@@ -18,7 +18,7 @@
   </head>
 
   <body>
-      <form action="gen_pin.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
+      <form action="grouping.php?room=<?php echo $_GET["room"]?>&team_size=<?php echo $_GET["team_size"]?>" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
           <br><br>
           <center>
             <pin> pin : <?php 
