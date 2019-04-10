@@ -21,20 +21,18 @@
       <form action="gen_pin.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
           <br><br>
           <center>
-            <pin> pin : <?php echo $pin?></pin>
+            <pin> pin : <?php 
+                          echo $_GET["room"];
+                        ?>               
+            </pin>
             <div class="col-sm-6">
               <button type="submit" class="btn join"> Start Grouping </button>
             </div>
             <br>
-            <!-- <id> 590610674 <id> -->
             <div id="refresh"></div>
             <div id="all_client">
-              <?php
-              $myfile = fopen("pin.txt", "r") or die("Unable to open file!");
-              $pin_store = fgets($myfile);
-              fclose($myfile);
-              $pin_store_array = explode(",", $pin_store);      
-              $id_client = "SELECT * FROM client WHERE pin='$pin_store_array[0]'";
+              <?php     
+              $id_client = "SELECT * FROM client WHERE pin=$_GET[room]";
               $result =  $pdo->query($id_client);
 
               if($result->rowCount() > 0) {

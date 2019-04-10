@@ -54,9 +54,9 @@
       $stmt->bindParam(':client_name', $client_name, PDO::PARAM_STR);
       $stmt->execute();
 
-      $_SESSION['pin'] = NULL;
+      $_SESSION['pin'] = $_GET["room"];
       $_SESSION['client_name'] = $client_name;
-      header('Location:personality_test.php');
+      header("Location:question.php?client=$client_name&in_room=$pin");
 
       // echo '<script language="javascript">';
       // echo 'alert("Join room successfully.")';

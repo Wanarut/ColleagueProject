@@ -23,11 +23,7 @@
             $_SESSION['pin'] = $pin;
             $_SESSION['team_size'] = $team_size;
 
-            $myfile = fopen("pin.txt", "w") or die("Unable to open file!");
-            fwrite($myfile, $pin.",".$team_size);
-            fclose($myfile);
-
-            header('Location: waitting_room.php'); 
+            header("Location: waiting_room.php?room=$pin&team_size=$team_size"); 
             break;
         } catch(PDOException $e){}
     }

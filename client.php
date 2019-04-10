@@ -52,7 +52,7 @@
     if($stmt->rowCount() == 1){
       session_start();
       $_SESSION['pin'] = $pin;
-      header('Location:insert_name.php');
+      header("Location:insert_name.php?room=$pin");
     }else{
       echo '<script language="javascript">';
       echo 'alert("PIN Invalid.")';
