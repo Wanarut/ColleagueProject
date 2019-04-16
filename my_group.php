@@ -32,12 +32,12 @@
 
             $sql = "SELECT * FROM client WHERE team_no=(SELECT team_no FROM client WHERE client_name=:client_name) and pin=:pin";
             $stmt = $pdo->prepare($sql);
-            // $stmt -> bindParam(':client_name', $_GET["client"], PDO::PARAM_STR);
-            // $stmt -> bindParam(':pin', $_GET["room"], PDO::PARAM_STR);
-            $id = "590610656";
-            $roomom = "1150";
-            $stmt -> bindParam(':client_name', $id, PDO::PARAM_STR);
-            $stmt -> bindParam(':pin', $roomom , PDO::PARAM_STR);
+            $stmt -> bindParam(':client_name', $_GET["client"], PDO::PARAM_STR);
+            $stmt -> bindParam(':pin', $_GET["room"], PDO::PARAM_STR);
+            // $id = "590610656";
+            // $roomom = "1150";
+            // $stmt -> bindParam(':client_name', $id, PDO::PARAM_STR);
+            // $stmt -> bindParam(':pin', $roomom , PDO::PARAM_STR);
             $stmt -> execute();
             
             echo "<pingroup>Your Team" . "</pingroup>".'<br><br>';
