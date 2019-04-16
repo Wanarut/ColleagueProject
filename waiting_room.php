@@ -28,25 +28,43 @@
             <div class="col-sm-6">
               <button type="submit" class="btn join"> Start Grouping </button>
             </div>
+            </center>
             <br>
             <div id="refresh"></div>
             <div id="all_client">
               <?php     
               $id_client = "SELECT * FROM client WHERE pin=$_GET[room]";
+              // $id_client = "SELECT * FROM client WHERE pin='1150'";
               $result =  $pdo->query($id_client);
 
               if($result->rowCount() > 0) {
+                echo "<div class='row'>
+                      <div class='col-sm-1'></div>
+                      <div class='col-sm-1'>";
+                echo "<br><center><pingen>".$result->rowCount()."</pingen>"."<h2>Person</h2></center>";
+                echo "</div>";
+                echo "<div class='col-sm-8'></div>";
+                echo "</div>";
+
+                echo "<div class='row'>
+                      <div class='col-sm-2'></div>
+                      <div class='col-sm-8'>
+                      <id>";
                 $count_roll = 0;
                 while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                   //echo $row["client_name"];
-                  echo "<id>".$row["client_name"]."<id><br>";
+                  
+                  echo $row["client_name"]." , ";
+                  
                 }
+                echo "<id></div>";
+                echo "<div class='col-sm-2'></div>";
+                echo "</div>";
               } else {
                   //echo "0 results";
               }
             ?>
             </div>
-          </center>
       </form>
   </body>
 </html>
