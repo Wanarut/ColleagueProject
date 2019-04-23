@@ -25,11 +25,12 @@
                           echo $_GET["room"];
                         ?>               
             </pin>
-            <div class="col-sm-6">
+            <br>
               <button type="submit" class="btn join"> Start Grouping </button>
-            </div>
             </center>
             <br>
+      </form>
+      <center><button type="button" class="btn create" onclick="window.location.href='delete_room.php?room=<?php echo $_GET['room']?>'">Back</button></center>
             <div id="refresh"></div>
             <div id="all_client">
               <?php     
@@ -65,7 +66,6 @@
               }
             ?>
             </div>
-      </form>
   </body>
 </html>
 <script type="text/javascript">

@@ -15,6 +15,8 @@
     <form action="my_group.php?client=<?php echo $_GET["client"]?>&room=<?php echo $_GET["room"]?>" method="POST" name="waiting_page" id="waiting_page" class="needs-validation">
       <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
       <center><test>Waiting...</test>
+    </form>
+        <center><button type="button" class="btn create" onclick="window.location.href='delete_user.php?client=<?php echo $_GET['client']?>'">Exit</button></center>
         <br><br>
         <div id="refresh"></div>
               <div id="all_client">
@@ -36,8 +38,7 @@
                 }
               ?>
         </div>
-      </center> 
-    </form>  
+      </center>   
   </body>
 </html>
 <script type="text/javascript">

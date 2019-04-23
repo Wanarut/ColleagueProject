@@ -26,7 +26,8 @@
   </style>
   <body>
     <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
-    <form action="client.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
+    <form action="delete_room.php?room=<?php echo $_GET['room']?>'" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
+    <center><button type="submit" class="btn join"> Finished </button></center>
     <?php
         session_start();
         // $pin = $_SESSION['pin'];

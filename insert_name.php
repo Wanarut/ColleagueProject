@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-sm-5"></div>
         <div class="col-sm-2">
-        <div class="form-group">
+        <div class="form-group"> 
           <center><pin> enter your code </pin></center>
           <input name="client_name" type="pin" class="form-control" placeholder="Enter Code" required=true pattern="[0-9]{9}">
           <div class="valid-feedback">
@@ -33,6 +33,7 @@
       <!-- <center><input type="image" src="img\UI\StartGrouping.png" type="submit" width="250" height="250"></center> -->
       <center><input type="image" src="img\UI\StartGrouping.png" alt="submit" width="300" height="80"></center>
     </from>
+    <center> <button type="button" class="btn create" onclick="window.location.href='client.php'">Back</button> </center>
   </body>
 </html>
 
@@ -46,16 +47,16 @@
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     $client_name = $_POST['client_name'];
     try{
-      require_once 'config.php';
-      $sql = "INSERT INTO client (pin,client_name) VALUES (:pin,:client_name)";
-      $stmt = $pdo->prepare($sql);
-      // Bind parameters to statement
-      $stmt->bindParam(':pin', $pin, PDO::PARAM_STR);
-      $stmt->bindParam(':client_name', $client_name, PDO::PARAM_STR);
-      $stmt->execute();
+      // require_once 'config.php';
+      // $sql = "INSERT INTO client (pin,client_name) VALUES (:pin,:client_name)";
+      // $stmt = $pdo->prepare($sql);
+      // // Bind parameters to statement
+      // $stmt->bindParam(':pin', $pin, PDO::PARAM_STR);
+      // $stmt->bindParam(':client_name', $client_name, PDO::PARAM_STR);
+      // $stmt->execute();
 
-      $_SESSION['pin'] = $_GET["room"];
-      $_SESSION['client_name'] = $client_name;
+      // $_SESSION['pin'] = $_GET["room"];
+      // $_SESSION['client_name'] = $client_name;
       header("Location:question.php?client=$client_name&in_room=$pin");
 
       // echo '<script language="javascript">';
@@ -68,7 +69,7 @@
     }
   }
 ?>
-
+ 
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {

@@ -1,4 +1,13 @@
 <?php
+   require_once 'config.php';
+
+   $sql = "INSERT INTO client (pin,client_name) VALUES (:pin,:client_name)";
+   $stmt = $pdo->prepare($sql);
+      // Bind parameters to statement
+   $stmt->bindParam(':pin', $_GET["room"], PDO::PARAM_STR);
+   $stmt->bindParam(':client_name', $_GET["client"], PDO::PARAM_STR);
+   $stmt->execute();
+
 	$N = 0;
 	$S = 0;
 	$F = 0;
@@ -64,8 +73,6 @@
          if($F > $T){$type = 3;}
          else{$type = 2;}
       } 
-
-      require_once 'config.php';
 
       unset($stmt);
 

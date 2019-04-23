@@ -33,8 +33,9 @@
 
         <center><button type="submit" class="btn join" >Join </button></center>
         <br>
-        <center> <button class="btn create" onclick="window.location.href='create_room.php'">Create</button> </center>
-    </from>
+      </from>
+        <center> <button type="button" class="btn create" onclick="window.location.href='create_room.php'">Create</button> </center>
+    
     
   </body>
 </html>

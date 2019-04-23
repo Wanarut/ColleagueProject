@@ -78,5 +78,8 @@
   	</div>
     <center><button type="submit" class="btn join" >Next </button></center>
 	</form>
+	<br>
+	<center> <button type="button" class="btn create" onclick="window.location.href='client.php'">Back</button> </center>
+	<br><br>
   </body>
 </html>
