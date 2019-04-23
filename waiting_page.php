@@ -31,7 +31,7 @@
                     if($row["team_no"]!="0"){
                       //echo "<button name='submit1' type='submit' class='btn join'> Go to your group </button>";
 
-                      echo "<input type='image' src='img\go.png' onclick='window.location.href='create_room.php'' width='230' height='70'>";   
+                      echo "<input type='image' src='img\UI\go.png' onclick='window.location.href='create_room.php'' width='230' height='70'>";   
                     }else{
                     }                
                   }

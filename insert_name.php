@@ -31,9 +31,9 @@
         <div class="col-sm-5"></div>
       </div>
       <!-- <center><input type="image" src="img\UI\StartGrouping.png" type="submit" width="250" height="250"></center> -->
-      <center><input type="image" src="img\StartGrouping.png" alt="submit" width="300" height="80"></center>
+      <center><input type="image" src="img\UI\StartGrouping.png" alt="submit" width="300" height="80"></center>
     </from>
-    <center> <input type="image" src="img\back.png" onclick="window.location.href='client.php'" width="200" height="80"></center>
+    <center> <input type="image" src="img\UI\back.png" onclick="window.location.href='client.php'" width="200" height="80"></center>
   </body>
 </html>
 

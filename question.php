@@ -76,9 +76,9 @@
 				<input name="15" type="radio" value="b"> <label>เป็นนักปฏิบัติที่ดี</label><br><br>
 				
   	</div>
-  	<center><center><input type="image" src="img\next.png" alt="submit" width="230" height="70"></center></center>
+  	<center><center><input type="image" src="img\UI\next.png" alt="submit" width="230" height="70"></center></center>
 	</form>
-	<center> <input type="image" src="img\back.png" onclick="window.location.href='client.php'" width="200" height="80"></center>
+	<center> <input type="image" src="img\UI\back.png" onclick="window.location.href='client.php'" width="200" height="80"></center>
 	<br><br>
   </body>
 </html>

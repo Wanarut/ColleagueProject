@@ -35,10 +35,10 @@
             </pinb>
             <br><br>
   
-              <input type="image" src="img\StartGrouping.png" alt="submit" width="350" height="100">
+              <input type="image" src="img\UI\StartGrouping.png" alt="submit" width="350" height="100">
             </center>
       </form>
-      <center><input type="image" src="img\back.png" onclick="window.location.href='delete_room.php?room=<?php echo $_GET['room']?>'" width="200" height="80"></center>
+      <center><input type="image" src="img\UI\exit.png" onclick="window.location.href='delete_room.php?room=<?php echo $_GET['room']?>'" width="200" height="80"></center>
       
      <!--  <center><button type="button" class="btn create" onclick="window.location.href='delete_room.php?room=<?php echo $_GET['room']?>'">Back</button></center> -->
             <div id="refresh"></div>
