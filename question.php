@@ -76,10 +76,9 @@
 				<input name="15" type="radio" value="b"> <label>เป็นนักปฏิบัติที่ดี</label><br><br>
 				
   	</div>
-    <center><button type="submit" class="btn join" >Next </button></center>
+  	<center><center><input type="image" src="img\next.png" alt="submit" width="230" height="70"></center></center>
 	</form>
-	<br>
-	<center> <button type="button" class="btn create" onclick="window.location.href='client.php'">Back</button> </center>
+	<center> <input type="image" src="img\back.png" onclick="window.location.href='client.php'" width="200" height="80"></center>
 	<br><br>
   </body>
 </html>

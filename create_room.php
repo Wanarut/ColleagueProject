@@ -35,7 +35,7 @@
             ?>
           </select>
         </div>
-        <input type="image" src="img\UI\create.png" alt="submit" width="250" height="70">
+        <input type="image" src="img\create.png" alt="submit" width="230" height="70">
       </div>
       <div class="col-sm-4"></div>
     </div>
@@ -43,8 +43,8 @@
     <div class="row">
       <div class="col-sm-4"></div>
       <div class="col-sm-4">
-        <br>
-        <button type="button" class="btn create" onclick="window.location.href='client.php'">Back</button>
+         <input type="image" src="img\back.png" onclick="window.location.href='client.php'" width="200" height="80">
+        <!-- <button type="button" class="btn create" onclick="window.location.href='client.php'">Back</button> -->
       </div>
       <div class="col-sm-4"></div>
     </div>

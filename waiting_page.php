@@ -22,14 +22,16 @@
               <div id="all_client">
                 <?php 
                 require_once 'config.php';
-
+ 
                 $id_client = "SELECT team_no FROM client WHERE client_name=$_GET[client]";
                 $result =  $pdo->query($id_client);
 
                 if($result->rowCount() > 0) {
                   while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                     if($row["team_no"]!="0"){
-                      echo "<button name='submit1' type='submit' class='btn join'> Go to your group </button>";       
+                      //echo "<button name='submit1' type='submit' class='btn join'> Go to your group </button>";
+
+                      echo "<input type='image' src='img\go.png' onclick='window.location.href='create_room.php'' width='230' height='70'>";   
                     }else{
                     }                
                   }

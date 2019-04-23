@@ -16,21 +16,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS.css">
   </head>
-
+<style type="text/css">
+  pinb {
+    font-weight: bold;
+    text-align: center;
+    font-size: 72px;
+    text-transform: uppercase;
+    color:  black;
+  }
+</style>
   <body>
       <form action="grouping.php?room=<?php echo $_GET["room"]?>&team_size=<?php echo $_GET["team_size"]?>" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
           <br><br>
           <center>
-            <pin> pin : <?php 
+            <pinb> pin : <?php 
                           echo $_GET["room"];
                         ?>               
-            </pin>
-            <br>
-              <button type="submit" class="btn join"> Start Grouping </button>
+            </pinb>
+            <br><br>
+  
+              <input type="image" src="img\StartGrouping.png" alt="submit" width="350" height="100">
             </center>
-            <br>
       </form>
-      <center><button type="button" class="btn create" onclick="window.location.href='delete_room.php?room=<?php echo $_GET['room']?>'">Back</button></center>
+      <center><input type="image" src="img\back.png" onclick="window.location.href='delete_room.php?room=<?php echo $_GET['room']?>'" width="200" height="80"></center>
+      
+     <!--  <center><button type="button" class="btn create" onclick="window.location.href='delete_room.php?room=<?php echo $_GET['room']?>'">Back</button></center> -->
             <div id="refresh"></div>
             <div id="all_client">
               <?php     

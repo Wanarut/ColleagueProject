@@ -26,7 +26,8 @@
   </style>
   <body>
     <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
-    <center><button type="button" class="btn create" onclick="window.location.href='delete_user.php?client=<?php echo $_GET['client']?>'">finished</button></center>
+    <center><input type="image" src="img\finish.png"  onclick="window.location.href='delete_user.php?client=<?php echo $_GET['client']?>'" width="200" height="80"></center>
+    <br>
     <center>
         <?php
             require_once 'config.php';

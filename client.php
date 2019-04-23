@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="CSS.css">
   </head>
 
+  <style>
+  input[type="pin"]::placeholder {  
+                  
+                  /* Firefox, Chrome, Opera */ 
+                  text-align: center; 
+              } 
+  </style>
+
   <body>
     <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
     <form action="client.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
@@ -31,10 +39,10 @@
         <div class="col-sm-5"></div>
       </div>
 
-        <center><button type="submit" class="btn join" >Join </button></center>
-        <br>
+        <center><input type="image" src="img\join.png" alt="submit" width="230" height="65"></center>
       </from>
-        <center> <button type="button" class="btn create" onclick="window.location.href='create_room.php'">Create</button> </center>
+      
+        <center> <input type="image" src="img\create.png" onclick="window.location.href='create_room.php'" width="230" height="70"> </center>
     
     
   </body>
