@@ -30,7 +30,7 @@
                   while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                     if($row["team_no"]!="0"){
                       //echo "<button name='submit1' type='submit' class='btn join'> Go to your group </button>";
-
+                      //header("Location:client.php");
                       echo "<input type='image' src='img\UI\go.png' onclick='window.location.href='create_room.php'' width='230' height='70'>";   
                     }else{
                     }                
@@ -48,4 +48,5 @@
     function my_function(){ 
       $('#refresh').load(' #all_client');
     }
+
 </script>
