@@ -41,7 +41,6 @@
 
         <center><input type="image" src="img\UI\join.png" alt="submit" width="230" height="65"></center>
       </from>
-      
         <center> <input type="image" src="img\UI\create.png" onclick="window.location.href='create_room.php'" width="230" height="70"> </center>
     
     

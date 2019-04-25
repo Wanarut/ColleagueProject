@@ -66,12 +66,12 @@
       else if($_POST['15'] == 'b'){++$S;}
  
       if($S > $N){
-         if($J > $P){$type = 4;}
-         else{$type = 1;}
+         if($J > $P){$type = 4;}//sj
+         else{$type = 1;}//sp
       }
       else{
-         if($F > $T){$type = 3;}
-         else{$type = 2;}
+         if($F > $T){$type = 3;}//nf
+         else{$type = 2;}//nt
       } 
 
       unset($stmt);

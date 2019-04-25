@@ -26,7 +26,8 @@
   </style>
   <body>
     <center><img src="img\UI\NameWhite.png" alt="Girl in a jacket" style="width:500px;height:280px;"></center>
-    <form action="delete_room.php?room=<?php echo $_GET['room']?>'" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
+    <!-- <form action="delete_room.php?room=<?php echo $_GET['room']?>'" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate> -->
+    <form action="grouping.php" method="POST" name="myFormLogin" id="myFormLogin" class="needs-validation" novalidate>
         <center><input type="image" src="img\UI\finish.png"  alt="submit" width="200" height="80"></center>
     <!-- <center><button type="submit" class="btn join"> Finished </button></center> -->
     <br>
@@ -35,11 +36,11 @@
         // $pin = $_SESSION['pin'];
         // $team_size = $_SESSION['team_size'];
 
-        // $pin = "1150";
-        // $team_size = 3;
-        $pin = $_GET["room"];
-        $team_size = $_GET["team_size"];
-        $alpha = 0.5;
+         $pin = "1150";
+         $team_size = 4;
+        //$pin = $_GET["room"];
+        //$team_size = $_GET["team_size"];
+        // $alpha = 0.5;
 
         require_once 'config.php';
 
